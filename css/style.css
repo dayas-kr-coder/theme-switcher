@@ -6,19 +6,53 @@
 
 :root {
   --dark-color: #111;
-  --dark-grey: #333;
   --light-grey: #f8f8f8;
+  --dark-grey: #333;
   --light-200: #c6c6c6;
   --primary-color: #0095ff;
   --secondary-color: #9663fc;
+}
+
+.light-mode {
+  --dark-color: #111;
+  --light-grey: #f8f8f8;
+}
+
+.dark-mode {
+  --dark-color: #f8f8f8;
+  --light-grey: #111;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  background-color: var(--dark-color);
-  color: var(--dark-grey);
+  background-color: var(--light-grey);
+  color: var(--dark-color);
+}
+
+#themes {
+  display: inline-block;
+}
+
+svg {
+  width: 100px;
+  height: 100px;
+  color: #626262;
+}
+
+.dark-mode #themes svg,
+.light-mode #themes svg {
+  display: none;
+  cursor: pointer;
+}
+
+.dark-mode #themes svg.sun {
+  display: block;
+}
+
+.light-mode #themes svg.moon {
+  display: block;
 }
 
 /*? ----- Utility Classes ----- */
@@ -179,4 +213,8 @@ input[type="number"]::-webkit-outer-spin-button {
 /* disNone */
 .disNone {
   display: none;
+}
+
+.disBlock {
+  display: block;
 }
